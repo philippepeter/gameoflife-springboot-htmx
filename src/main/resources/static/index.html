@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game of life</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.violet.min.css"
+    />
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+</head>
+<body>
+
+<main class="container">
+    <h1>Game of life</h1>
+
+    <div id="grid-container" class="grid-container">
+    </div>
+
+    <button hx-post="/reset"
+            hx-trigger="click"
+            hx-target="#grid-container"
+            hx-swap="outerHTML">
+        Reset
+    </button>
+
+    <button hx-post="/next"
+            hx-trigger="click"
+            hx-target="#grid-container"
+            hx-swap="outerHTML">
+        Next
+    </button>
+</main>
+
+
+</body>
+</html>
